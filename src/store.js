@@ -1,6 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
+
 import { themeReduser } from './features/theme/theme-slice'
+import { moviesReduser } from './features/movies/movies-slice'
+
 import axios from 'axios'
+import * as api from './config'
+
 import { loadStorage, updateStorage } from './localStorage'
 
 
@@ -9,6 +14,7 @@ const persisStore = loadStorage()
 export const store = configureStore({
    reducer: {
       theme: themeReduser,
+      movies: moviesReduser,
    },
    preloadedState: persisStore,
    devTools: true,
@@ -16,6 +22,7 @@ export const store = configureStore({
       thunk: {
          extraArgument: {
             client: axios,
+            api,
          }
       }
    })
