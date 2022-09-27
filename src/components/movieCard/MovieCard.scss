@@ -16,10 +16,11 @@
 
    &__title {
       padding: 10px 0;
+      font-weight: 600;
    }
 
-   &__text{
-      
+   &__text {
+      color: var(--ui-text);
    }
 
 }

@@ -8,6 +8,7 @@ body[data-theme='dark'] {
    --colors-bg: hsl(0, 0%, 6%);
    --shadow: rgba(255, 255, 255, 0.205) 0 0 15px;
    --ui-bg: rgb(43, 43, 49);
+   --ui-text: rgb(177, 177, 177);
 }
 
 body[data-theme='light'] {
@@ -15,6 +16,7 @@ body[data-theme='light'] {
    --colors-bg: hsl(0, 0%, 98%);
    --shadow: rgba(104, 109, 114, 0.2) 0px 8px 24px;
    --ui-bg: rgb(224, 224, 224);
+   --ui-text: rgb(80, 80, 80);
 }
 
 body {
