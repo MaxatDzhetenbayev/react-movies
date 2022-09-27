@@ -6,7 +6,7 @@
 body[data-theme='dark'] {
    --colors-text: hsl(0, 0%, 100%);
    --colors-bg: hsl(0, 0%, 6%);
-   --shadow: rgba(245, 245, 245, 0.2) 0 0 15px;
+   --shadow: rgba(255, 255, 255, 0.205) 0 0 15px;
 }
 
 body[data-theme='light'] {
@@ -25,4 +25,5 @@ body {
 .container {
    width: 1200px;
    margin: 0 auto;
+   padding: 0 20px;
 }

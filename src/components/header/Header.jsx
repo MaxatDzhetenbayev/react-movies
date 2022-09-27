@@ -7,9 +7,9 @@ const Header = () => {
       <section className='header'>
          <div className='container'>
             <div className='header__row'>
-               <h1 className='header__logo'>
+               <div className='header__logo'>
                   Movies
-               </h1>
+               </div>
                <ThemeSwitcher />
             </div>
          </div>

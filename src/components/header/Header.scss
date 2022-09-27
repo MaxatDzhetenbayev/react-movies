@@ -4,16 +4,16 @@
 
 .header {
    &__row {
+      @extend %borders;
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px;
-
-      @extend %borders;
 
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       padding: 25px 50px;
+      margin-bottom: 20px;
    }
 
    &__logo {
