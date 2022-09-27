@@ -1,0 +1,16 @@
+:root {
+   --text: #000
+}
+
+body[data-theme='light'] {
+   --light-text: #000
+}
+
+.container {
+   width: 1200px;
+   margin: 0 auto;
+}
+
+p {
+   color: var(--light)
+}
