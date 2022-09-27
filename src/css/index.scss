@@ -7,15 +7,18 @@ body[data-theme='dark'] {
    --colors-text: hsl(0, 0%, 100%);
    --colors-bg: hsl(0, 0%, 6%);
    --shadow: rgba(255, 255, 255, 0.205) 0 0 15px;
+   --ui-bg: rgb(43, 43, 49);
 }
 
 body[data-theme='light'] {
    --colors-text: hsl(200, 15%, 8%);
    --colors-bg: hsl(0, 0%, 98%);
    --shadow: rgba(104, 109, 114, 0.2) 0px 8px 24px;
+   --ui-bg: rgb(224, 224, 224);
 }
 
 body {
+   box-sizing: border-box;
    margin: 0;
    color: var(--colors-text);
    font-weight: var(--fw-light);
@@ -23,7 +26,7 @@ body {
 }
 
 .container {
-   width: 1200px;
+   max-width: 1200px;
    margin: 0 auto;
    padding: 0 20px;
 }

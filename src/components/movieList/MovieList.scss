@@ -1,0 +1,23 @@
+.home__films {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(250px, 1fr));
+   gap: 25px;
+}
+
+@media screen and (max-width: 1170px) {
+   .home__films {
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+   }
+}
+
+@media screen and (max-width: 840px) {
+   .home__films {
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+   }
+}
+
+@media screen and (max-width: 545px) {
+   .home__films {
+      grid-template-columns:  1fr;
+   }
+}

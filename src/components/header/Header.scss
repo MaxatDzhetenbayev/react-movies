@@ -22,3 +22,16 @@
       font-weight: 800;
    }
 }
+
+@media screen and (max-width: 545px) {
+   .header {
+      &__row {
+         padding: 25px 20px;
+      }
+
+      &__logo {
+         font-size: 18px;
+      }
+   }
+
+}

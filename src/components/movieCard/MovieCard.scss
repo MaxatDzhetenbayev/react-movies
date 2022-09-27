@@ -1,0 +1,25 @@
+@import '../../css//templates.scss';
+
+.movie-card {
+   @extend %borders;
+   border-radius: 8px;
+   overflow: hidden;
+
+   &__img {
+      width: 100%;
+
+   }
+
+   &__body {
+      padding: 15px 10px;
+   }
+
+   &__title {
+      padding: 10px 0;
+   }
+
+   &__text{
+      
+   }
+
+}
