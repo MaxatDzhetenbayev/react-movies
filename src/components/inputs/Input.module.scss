@@ -1,6 +1,18 @@
 .input {
    border-radius: 5px;
-   border: none;
-   background-color: #000;
-   padding: 10px 15px;
+   border: 1px solid var(--ui-bg);
+
+   background-color: var(--ui-bg);
+   color: var(--ui-text);
+
+   outline: none;
+   padding: 10px 25px;
+
+   cursor: pointer;
+
+   transition: border 0.2s ease;
+
+   &:focus {
+      border: 1px solid rgb(78, 106, 197);
+   }
 }

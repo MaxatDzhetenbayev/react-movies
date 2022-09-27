@@ -2,9 +2,7 @@ import React from 'react'
 import ItemTag from '../ItemTag'
 import './MovieCard.scss'
 
-const MovieCard = ({ genres, title, description, rating, year, image }) => {
-
-
+const MovieCard = ({ genres, title, description, year, image }) => {
 
 
    return (

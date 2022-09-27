@@ -1,9 +1,9 @@
 import React from 'react'
 import s from "./Input.module.scss"
 
-const Input = ({ value, change }) => {
+const Input = ({ value, change, placeholder }) => {
    return (
-      <input className={s.input} placeholder='Поиск фильма' value={value} onChange={change} />
+      <input className={s.input} placeholder={placeholder} value={value} onChange={(e) => change(e.target.value)} />
    )
 }
 

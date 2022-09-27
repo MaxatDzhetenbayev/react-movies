@@ -1,7 +1,16 @@
-.home__films {
+.movie__films {
    display: grid;
    grid-template-columns: repeat(4, minmax(250px, 1fr));
    gap: 25px;
+}
+
+.movie__message {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: calc(50vh - 90px);
+
+
 }
 
 @media screen and (max-width: 1170px) {
@@ -18,6 +27,6 @@
 
 @media screen and (max-width: 545px) {
    .home__films {
-      grid-template-columns:  1fr;
+      grid-template-columns: 1fr;
    }
 }
