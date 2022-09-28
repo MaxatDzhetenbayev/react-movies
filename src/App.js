@@ -12,7 +12,6 @@ function App() {
             <Routes>
                <Route path="/" exact element={<Home />}></Route>
                <Route path="/movies-detail/:name" element={<MovieDetails />} >
-                  {/* <Route path="" element={<MovieDetails />} /> */}
                </Route>
             </Routes>
          </Router>

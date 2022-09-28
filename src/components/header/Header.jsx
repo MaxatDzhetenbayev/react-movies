@@ -8,10 +8,10 @@ const Header = () => {
    const navigate = useNavigate()
 
    return (
-      <section className='header' onClick={() => navigate('/')}>
+      <section className='header' >
          <div className='container'>
             <div className='header__row'>
-               <div className='header__logo'>
+               <div className='header__logo' onClick={() => navigate('/')}>
                   Movies
                </div>
                <ThemeSwitcher />

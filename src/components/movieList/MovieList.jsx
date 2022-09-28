@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import './MovieList.scss'
 
 
-
 import MovieCard from '../movieCard/MovieCard'
-
 import { loadMovies, selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
-import Loader from '../loader/Loader'
+
 import VisibleContent from '../visibleContent/VisibleContent'
 
 
@@ -25,7 +23,7 @@ const MovieList = () => {
 
    return (
       <VisibleContent status={status} error={error}>
-         
+
          <div className='movie__films'>
             {
                movies.map((movie => {
@@ -36,7 +34,8 @@ const MovieList = () => {
                      description: movie.summary,
                      image: movie.large_cover_image,
                      id: movie.id,
-                     slug: movie.slug
+                     slug: movie.slug,
+                     rating: movie.rating
                   }
                   return <MovieCard key={movie.id} {...movieInfo} />
                }))
