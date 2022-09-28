@@ -5,13 +5,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 const initialState = {
    status: 'idle',
    entities: [],
+   movie_count: null,
+   page: 1,
    error: null
 }
 
 export const loadMovies = createAsyncThunk(
    '@@movies/load-movies',
-   async (_, { extra: { api, client } }) => {
-      const res = await client.get(api.MOVIE_FILTER_LIMIT_AND_PAGE())
+   async (page, { extra: { api, client } }) => {
+      const res = await client.get(api.MOVIE_FILTER_LIMIT_AND_PAGE(page))
       return res.data
    }
 )
@@ -19,7 +21,11 @@ export const loadMovies = createAsyncThunk(
 const moviesSlice = createSlice({
    name: '@@movies',
    initialState,
-   reducers: {},
+   reducers: {
+      setPage: (state, action) => {
+         state.page = action.payload
+      }
+   },
    extraReducers: (builders) => {
       builders
          .addCase(loadMovies.pending, (state) => {
@@ -33,17 +39,20 @@ const moviesSlice = createSlice({
          .addCase(loadMovies.fulfilled, (state, action) => {
             state.status = 'received'
             state.entities = action.payload.data.movies
+            state.movie_count = action.payload.data.movie_count
          })
    }
 })
 
+export const { setPage } = moviesSlice.actions
 export const moviesReduser = moviesSlice.reducer
 
 
 export const selectMoviesInfo = (state) => ({
    status: state.movies.status,
    error: state.movies.error,
-   qty: state.movies.entities.length,
+   movie_count: state.movies.movie_count,
+   page: state.movies.page,
 })
 
 export const selectAllMovies = (state) => state.movies.entities

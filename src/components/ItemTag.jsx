@@ -1,9 +1,10 @@
 import React from 'react'
 
-const ItemTag = ({ title }) => {
+const ItemTag = ({ title, ...props }) => {
 
    return (
       <div
+         {...props}
          style={{
             padding: '5px 10px',
             backgroundColor: 'var(--ui-bg)',

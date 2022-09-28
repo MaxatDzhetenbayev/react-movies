@@ -1,0 +1,20 @@
+@import '../../css//templates.scss';
+
+.button {
+   padding: 10px 20px;
+
+   border: none;
+   border-radius: 15px;
+   outline: none;
+
+   background-color: var(--ui-bg);
+   color: var(--ui-text);
+
+   cursor: pointer;
+
+   transition: box-shadow 0.3s ease;
+
+   &:hover {
+      @extend %borders
+   }
+}

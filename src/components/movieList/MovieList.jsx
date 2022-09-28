@@ -13,11 +13,10 @@ import VisibleContent from '../visibleContent/VisibleContent'
 const MovieList = () => {
 
    const filter = useSelector(state => state.controls.filter)
-   const dispatch = useDispatch()
-   const { status, error, qty } = useSelector(selectMoviesInfo)
+   const { status, error } = useSelector(selectMoviesInfo)
    const movies = useSelector((state) => selectVisibleMovies(state, filter))
 
-   
+
 
    return (
       <VisibleContent status={status} error={error}>
