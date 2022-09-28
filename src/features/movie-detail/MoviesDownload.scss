@@ -1,0 +1,59 @@
+@import ' ../../../../css//templates.scss';
+
+.movie-info {
+
+
+
+   &__download {
+
+
+      margin-top: 5rem;
+      height: 170px;
+
+      @extend %borders;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+         text-align: center;
+         margin-bottom: 20px;
+
+         font-weight: 800;
+         font-size: 20px;
+      }
+
+      &-item {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 1rem;
+      }
+   }
+
+   &__button {
+      padding: 10px 20px;
+      display: block;
+      background-color: var(--ui-bg);
+      color: var(--ui-text);
+
+      cursor: pointer;
+      text-decoration: none;
+
+      border: none;
+      border-radius: 10px;
+
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+         @extend %borders;
+      }
+   }
+
+   &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+   }
+}

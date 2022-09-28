@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import VisibleContent from '../../components/visibleContent/VisibleContent'
 
 import { selectMovieInfo } from '../../features/movie-detail/movie-detail-slice'
-import MoviesInfo from '../../features/movies/MoviesInfo'
+import MoviesInfo from '../../features/movie-detail/MoviesInfo'
 
 
 

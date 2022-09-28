@@ -34,7 +34,6 @@ const MovieCard = ({ genres, title, description, year, image, id, slug, rating }
                   <ItemTag key={genre} title={genre} />
                ))}
                {genres.length > 2 && <ItemTag title={`Еще +${genres.length - 2} `} />}
-
             </div>
             <div className='movie-card__title'>{title} ({year}) </div>
             <div className='movie-card__text' >{description.slice(0, 80)}...</div>
