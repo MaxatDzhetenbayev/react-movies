@@ -11,7 +11,8 @@ const initialState = {
 export const loadMovies = createAsyncThunk(
    '@@movies/load-movies',
    async (_, { extra: { api, client } }) => {
-      return await client.get(api.BASE_MOVIE_URL)
+      const res = await client.get(api.BASE_MOVIE_URL)
+      return res.data
    }
 )
 
@@ -31,7 +32,7 @@ const moviesSlice = createSlice({
          })
          .addCase(loadMovies.fulfilled, (state, action) => {
             state.status = 'received'
-            state.entities = action.payload.data.data.movies
+            state.entities = action.payload.data.movies
          })
    }
 })

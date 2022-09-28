@@ -7,8 +7,9 @@ import './MovieList.scss'
 
 import MovieCard from '../movieCard/MovieCard'
 
-import { loadMovies, selectAllMovies, selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
+import { loadMovies, selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
 import Loader from '../loader/Loader'
+import VisibleContent from '../visibleContent/VisibleContent'
 
 
 const MovieList = () => {
@@ -23,38 +24,25 @@ const MovieList = () => {
    }, [])
 
    return (
-
-      <>
-         {status === 'loading' && (
-            <div className='movie__message'>
-               <Loader />
-            </div>
-         )}
-
-         {status == 'rejected' && (
-            <div className='movie__message'>{error}</div>
-         )}
+      <VisibleContent status={status} error={error}>
+         
          <div className='movie__films'>
-
-
-
             {
-               status === 'received' && (movies.map((movie => {
+               movies.map((movie => {
                   const movieInfo = {
                      title: movie.title,
                      year: movie.year,
                      genres: movie.genres,
                      description: movie.summary,
-                     image: movie.large_cover_image
+                     image: movie.large_cover_image,
+                     id: movie.id,
+                     slug: movie.slug
                   }
-
                   return <MovieCard key={movie.id} {...movieInfo} />
-               })))
+               }))
             }
-
-
-         </div >
-      </>
+         </div>
+      </VisibleContent>
    )
 }
 

@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { themeReduser } from './features/theme/theme-slice'
 import { moviesReduser } from './features/movies/movies-slice'
 import { controlsReduser } from './features/controls/controls-slice'
+import { movieDetailsReduser } from './features/movie-detail/movie-detail-slice'
 
 import axios from 'axios'
 import * as api from './config'
@@ -17,6 +18,7 @@ export const store = configureStore({
       theme: themeReduser,
       movies: moviesReduser,
       controls: controlsReduser,
+      movieDetails: movieDetailsReduser,
    },
    preloadedState: persisStore,
    devTools: true,
