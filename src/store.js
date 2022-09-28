@@ -4,6 +4,7 @@ import { themeReduser } from './features/theme/theme-slice'
 import { moviesReduser } from './features/movies/movies-slice'
 import { controlsReduser } from './features/controls/controls-slice'
 import { movieDetailsReduser } from './features/movie-detail/movie-detail-slice'
+import { pagionationReduser } from './features/pagination/pagination'
 
 import axios from 'axios'
 import * as api from './config'
@@ -19,6 +20,7 @@ export const store = configureStore({
       movies: moviesReduser,
       controls: controlsReduser,
       movieDetails: movieDetailsReduser,
+      pagination: pagionationReduser,
    },
    preloadedState: persisStore,
    devTools: true,

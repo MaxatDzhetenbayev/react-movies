@@ -1,14 +1,10 @@
 @import ' ../../../../css//templates.scss';
 
 .movie-info {
-
-
-
    &__download {
-
-
+      padding: 20px;
       margin-top: 5rem;
-      height: 170px;
+      min-height: 170px;
 
       @extend %borders;
 
@@ -55,5 +51,16 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .movie-info {
+      &__row {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 1.5rem;
+      }
    }
 }

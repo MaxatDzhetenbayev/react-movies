@@ -47,7 +47,7 @@ const MoviesInfo = () => {
                   <h2>Скачать</h2>
                   <div className='movie-info__row'>
                      {torrents.map(torrent => (
-                        <MoviesDownload value='скачать' href={torrent.url} quality={torrent.quality} />
+                        <MoviesDownload key={torrent.hash} value='скачать' href={torrent.url} quality={torrent.quality} />
                      ))}
                   </div>
                </div>

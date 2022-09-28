@@ -17,9 +17,7 @@ const MovieList = () => {
    const { status, error, qty } = useSelector(selectMoviesInfo)
    const movies = useSelector((state) => selectVisibleMovies(state, filter))
 
-   useEffect(() => {
-      dispatch(loadMovies())
-   }, [])
+   
 
    return (
       <VisibleContent status={status} error={error}>
