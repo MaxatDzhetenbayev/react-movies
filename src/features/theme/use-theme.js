@@ -6,8 +6,8 @@ export const useTheme = () => {
    const dispatch = useDispatch()
    const theme = useSelector(state => state.theme)
 
-   const handleSetTheme = (switched) => {
-      dispatch(setTheme(switched === 'light' ? 'dark' : 'light'))
+   const handleSetTheme = (theme) => {
+      dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))
    }
 
 
