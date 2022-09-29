@@ -26,10 +26,10 @@ const MovieCard = ({ genres, title, description, year, image, id, slug, rating }
 
    return (
       <div className='movie-card' onClick={() => handleSelectMovieById(id)}>
-         <img className='movie-card__img' src={image} alt="" />
+         <img className='movie-card__img' src={image} alt="Нет изображения" />
          <div className='movie-card__body'>
             <div className='movie-card__rating'><AiFillStar /> <span className='movie-card__rating-num'>{rating}</span> </div>
-            
+
             <div style={{ display: 'flex', gap: '0.4rem', fontSize: '14px' }}>
                {genres && genres.slice(0, 2).map((genre) => (
                   <ItemTag key={genre} title={genre} />

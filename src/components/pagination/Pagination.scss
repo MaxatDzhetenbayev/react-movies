@@ -1,0 +1,42 @@
+@import '../../css//templates.scss';
+
+.pagination {
+   max-width: 70vw;
+
+}
+
+.slick-slide>div {
+   display: flex;
+   justify-content: center;
+}
+
+.pag {
+   display: grid;
+   grid-template-columns: 40px 1fr 40px;
+   align-items: center;
+
+}
+
+.arrow {
+   background-color: var(--ui-bg);
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   text-align: center;
+   padding-top: calc(50% - 14px);
+
+   cursor: pointer;
+
+   transition: all 0.3s ease-in-out;
+
+   &:hover {
+      @extend %borders;
+
+      background-color: var(--ui-active-bg);
+      color: var(--ui-active-text);
+   }
+
+   &-next {
+      margin-left: 10px;
+   }
+}

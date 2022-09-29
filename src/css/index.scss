@@ -12,6 +12,8 @@ body[data-theme='dark'] {
 
    --ui-active-text: rgb(80, 80, 80);
    --ui-active-bg: rgb(224, 224, 224);
+
+   --ui-hover-text: rgb(168, 168, 168);
 }
 
 body[data-theme='light'] {
@@ -23,6 +25,8 @@ body[data-theme='light'] {
 
    --ui-active-text: rgb(177, 177, 177);
    --ui-active-bg: rgb(43, 43, 49);
+
+   --ui-hover-text: rgb(61, 61, 61);
 }
 
 body {

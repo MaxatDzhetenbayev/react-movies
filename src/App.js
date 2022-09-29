@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
 import MovieDetails from "./pages/movie-details/MovieDetails";
 
+
 function App() {
    return (
       <div className="app">
