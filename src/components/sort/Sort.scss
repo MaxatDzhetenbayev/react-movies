@@ -1,0 +1,16 @@
+.custom-sort {
+   &__control {
+      background-color: var(--ui-bg) !important;
+      outline: none !important; 
+      border: none !important;
+   }
+
+   &__single-value {
+      color: var(--ui-text) !important;
+   }
+
+   &__menu {
+      background-color: var(--ui-bg) !important;
+      color: var(--ui-text) !important;
+   }
+}

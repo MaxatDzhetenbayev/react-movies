@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 import './MovieList.scss'
 
 
 import MovieCard from '../movieCard/MovieCard'
-import { loadMovies, selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
+import {  selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
 
 import VisibleContent from '../visibleContent/VisibleContent'
 

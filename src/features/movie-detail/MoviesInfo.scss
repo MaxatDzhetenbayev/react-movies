@@ -5,6 +5,7 @@
 
    .genres {
       display: flex;
+      flex-wrap: wrap;
       gap: 0.3rem;
    }
 
@@ -44,6 +45,7 @@
    }
 
    &__desc {
+      text-align: justify;
       display: flex;
       flex-direction: column;
       gap: 1rem;

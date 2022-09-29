@@ -12,6 +12,7 @@ function App() {
             <Header />
             <Routes>
                <Route path="/" element={<Home />}>
+                  <Route path="/movie-sort/:sort" element={<Home />}></Route>
                </Route>
                <Route path="/movies-detail/:name" element={<MovieDetails />} >
                </Route>

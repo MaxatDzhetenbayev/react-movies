@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { loadMovies, selectMoviesInfo, setPage } from '../../features/movies/movies-slice'
 
 import MovieList from '../../components/movieList/MovieList'
-import Filter from '../../features/controls/filter/Filter'
-import Sort from '../../features/controls/sort/Sort'
-
-
-import { useDispatch, useSelector } from 'react-redux'
-import { loadMovies, selectMoviesInfo, setPage } from '../../features/movies/movies-slice'
 import Pagination from '../../components/pagination/Pagination'
+import Controls from '../../features/controls/Controls'
 
 
 
@@ -21,16 +21,15 @@ const Home = () => {
    const total_count = Math.ceil(movie_count / limit)
    const total_page = []
 
-   const sortOption = useSelector(state => state.select)
+   const { sort } = useParams()
 
    for (let i = 0; i < total_count; i++) {
       total_page.push(i + 1)
    }
 
-
    useEffect(() => {
-      dispatch(loadMovies({page, sortOption}))
-   }, [page, sortOption])
+      dispatch(loadMovies({ page, sort }))
+   }, [page, sort])
 
 
    const handleSetPage = (page) => {
@@ -41,12 +40,9 @@ const Home = () => {
    return (
       <div className='home'>
          <div className='container'>
-            <div>
-               <Sort />
-               <Filter />
-            </div>
+            <Controls />
             <MovieList />
-            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center'}}>
                <Pagination total_page={total_page} handleSetPage={handleSetPage} page={page} />
             </div>
 

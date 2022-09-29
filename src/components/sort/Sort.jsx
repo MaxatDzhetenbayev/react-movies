@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-
+import { useNavigate } from 'react-router-dom'
 import Select from 'react-select'
-import { setSelect } from '../select-slice'
+
+import './Sort.scss'
 
 const Sort = () => {
 
@@ -26,12 +26,10 @@ const Sort = () => {
    ]
 
    const [selectOption, setSelectOption] = useState('download_count')
-   const dispatch = useDispatch()
-
+   const navigate = useNavigate()
 
    useEffect(() => {
-      dispatch(setSelect(selectOption))
-
+      navigate(`/movie-sort/${selectOption}`)
    }, [selectOption])
 
 
@@ -42,13 +40,20 @@ const Sort = () => {
 
    const setMovieOption = (newValue) => {
       setSelectOption(newValue.value)
+
    }
 
 
    return (
       <div>
-         <Select onChange={setMovieOption} value={getMovieOption()} options={movie_options} />
-      </div>
+         <Select
+            classNamePrefix='custom-sort'
+            onChange={setMovieOption}
+            value={getMovieOption()}
+            options={movie_options}
+         >
+         </Select>
+      </div >
    )
 }
 
