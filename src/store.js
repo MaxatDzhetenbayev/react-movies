@@ -37,6 +37,6 @@ export const store = configureStore({
 store.subscribe(() => {
    updateStorage({
       theme: store.getState().theme,
-      movieDetails: store.getState().movieDetails
+      movieDetails: store.getState().movieDetails,
    })
 })

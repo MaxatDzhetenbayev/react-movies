@@ -1,9 +1,7 @@
 import React from 'react'
 import Button from '../buttons/Button'
 
-const Pagination = ({ total_page, handleSetPage, page }) => {
-
-
+const Pagination = ({ total_page, handleSetPage }) => {
 
 
    return (

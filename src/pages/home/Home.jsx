@@ -14,7 +14,7 @@ const Home = () => {
 
    const dispatch = useDispatch()
 
-   const limit = 30
+   const limit = 20
    const { page, movie_count } = useSelector(selectMoviesInfo)
 
    const total_count = Math.ceil(movie_count / limit)

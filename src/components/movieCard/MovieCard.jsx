@@ -29,12 +29,12 @@ const MovieCard = ({ genres, title, description, year, image, id, slug, rating }
          <img className='movie-card__img' src={image} alt="" />
          <div className='movie-card__body'>
             <div className='movie-card__rating'><AiFillStar /> <span className='movie-card__rating-num'>{rating}</span> </div>
-
+            
             <div style={{ display: 'flex', gap: '0.4rem', fontSize: '14px' }}>
-               {genres.slice(0, 2).map((genre) => (
+               {genres && genres.slice(0, 2).map((genre) => (
                   <ItemTag key={genre} title={genre} />
                ))}
-               {genres.length > 2 && <ItemTag title={`Еще +${genres.length - 2} `} />}
+               {genres && genres.length > 2 && <ItemTag title={`Еще +${genres.length - 2} `} />}
             </div>
 
             <div className='movie-card__title'>{title} ({year}) </div>
