@@ -12,8 +12,8 @@ const initialState = {
 
 export const loadMovies = createAsyncThunk(
    '@@movies/load-movies',
-   async (page, { extra: { api, client } }) => {
-      const res = await client.get(api.MOVIE_FILTER_LIMIT_AND_PAGE(page))
+   async ({page, sortOption}, { extra: { api, client } }) => {
+      const res = await client.get(api.LOADED_MOVIE(page, sortOption))
       return res.data
    }
 )

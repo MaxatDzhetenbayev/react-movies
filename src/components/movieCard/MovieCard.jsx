@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -14,8 +14,6 @@ const MovieCard = ({ genres, title, description, year, image, id, slug, rating }
 
    const navigate = useNavigate()
    const dispatch = useDispatch()
-
-   const [movieId, setMovieId] = useState('')
 
    const handleSelectMovieById = (id) => {
       dispatch(loadMovieDetails(id))

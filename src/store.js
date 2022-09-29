@@ -5,6 +5,7 @@ import { moviesReduser } from './features/movies/movies-slice'
 import { controlsReduser } from './features/controls/controls-slice'
 import { movieDetailsReduser } from './features/movie-detail/movie-detail-slice'
 import { pagionationReduser } from './features/pagination/pagination'
+import { selectReduser } from './features/controls/select-slice'
 
 import axios from 'axios'
 import * as api from './config'
@@ -21,6 +22,7 @@ export const store = configureStore({
       controls: controlsReduser,
       movieDetails: movieDetailsReduser,
       pagination: pagionationReduser,
+      select: selectReduser,
    },
    preloadedState: persisStore,
    devTools: true,
@@ -38,5 +40,6 @@ store.subscribe(() => {
    updateStorage({
       theme: store.getState().theme,
       movieDetails: store.getState().movieDetails,
+      select: store.getState().select
    })
 })
