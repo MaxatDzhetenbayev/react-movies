@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import Input from '../../../components/inputs/Input'
-import { setQueryMovies } from '../controls-slice'
+import { useState } from 'react'
+import Modal from '../../../components/modal/Modal'
+import MovieQuery from './movieQuery/MovieQuery'
 import MoviesSearchModal from './moviesSearchModal/MoviesSearchModal'
 
 const Search = () => {
 
-   const dispatch = useDispatch()
-
-   const [query, setQuery] = useState('')
    const [modalVisible, setModalVisible] = useState(false)
 
 
-   useEffect(() => {
-      dispatch(setQueryMovies(query))
-
-      if (query.length > 0) {
-         setModalVisible(true)
-      } else {
+   const handleVisible = () => {
+      if (modalVisible === true) {
          setModalVisible(false)
-      }
+      } else {
+         setModalVisible(true)
+         document.body.style = 'overflow-y: hidden'
 
-   }, [query])
+      }
+   }
 
 
    return (
       <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '20px 0px', }}>
-         <Input placeholder='Поиск фильма' value={query} change={setQuery} />
-         <MoviesSearchModal visible={modalVisible} />
+            <MovieQuery handleVisible={handleVisible} />
+         <Modal visible={modalVisible} close={handleVisible}>
+            <MoviesSearchModal />
+         </Modal>
       </div>
    )
 }
