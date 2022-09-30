@@ -1,21 +1,33 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Input from '../../../components/inputs/Input'
-import { setFilter } from '../controls-slice'
+import { setQueryMovies } from '../controls-slice'
+import MoviesSearchModal from './moviesSearchModal/MoviesSearchModal'
 
 const Search = () => {
 
    const dispatch = useDispatch()
-   const search = useSelector(state => state.controls.search)
+
+   const [query, setQuery] = useState('')
+   const [modalVisible, setModalVisible] = useState(false)
 
 
-   const handleFilterChange = (target) => {
-      dispatch(setFilter(target))
-   }
+   useEffect(() => {
+      dispatch(setQueryMovies(query))
+
+      if (query.length > 0) {
+         setModalVisible(true)
+      } else {
+         setModalVisible(false)
+      }
+
+   }, [query])
+
 
    return (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '20px 0' }}>
-         <Input placeholder='Поиск фильма' value={search} change={handleFilterChange} />
+      <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '20px 0px', }}>
+         <Input placeholder='Поиск фильма' value={query} change={setQuery} />
+         <MoviesSearchModal visible={modalVisible} />
       </div>
    )
 }

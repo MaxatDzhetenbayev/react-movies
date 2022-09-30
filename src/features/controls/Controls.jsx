@@ -7,7 +7,7 @@ import './Controls.scss'
 
 const Controls = () => {
    return (
-      <div className='controls'>
+      <div className='controls' style={{ position: 'relative' }}>
          <Sort />
          <Search />
       </div>

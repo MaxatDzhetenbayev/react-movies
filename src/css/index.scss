@@ -14,6 +14,8 @@ body[data-theme='dark'] {
    --ui-active-bg: rgb(224, 224, 224);
 
    --ui-hover-text: rgb(168, 168, 168);
+
+   --ui-opasity-bg: rgba(224, 224, 224, 0.7)
 }
 
 body[data-theme='light'] {
@@ -27,6 +29,8 @@ body[data-theme='light'] {
    --ui-active-bg: rgb(43, 43, 49);
 
    --ui-hover-text: rgb(61, 61, 61);
+
+   --ui-opasity-bg: rgba(43, 43, 49, 0.7);
 }
 
 body {
@@ -35,6 +39,8 @@ body {
    color: var(--colors-text);
    font-weight: var(--fw-light);
    background-color: var(--colors-bg);
+
+
 }
 
 .container {

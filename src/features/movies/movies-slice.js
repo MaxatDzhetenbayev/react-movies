@@ -7,12 +7,13 @@ const initialState = {
    entities: [],
    movie_count: null,
    page: 1,
+   detailId: null,
    error: null
 }
 
 export const loadMovies = createAsyncThunk(
    '@@movies/load-movies',
-   async ({page, sort}, { extra: { api, client } }) => {
+   async ({ page, sort }, { extra: { api, client } }) => {
       const res = await client.get(api.LOADED_MOVIE(page, sort))
       return res.data
    }
@@ -24,6 +25,9 @@ const moviesSlice = createSlice({
    reducers: {
       setPage: (state, action) => {
          state.page = action.payload
+      },
+      setDetailId: (state, action) => {
+         state.detailId = action.payload
       }
    },
    extraReducers: (builders) => {
@@ -44,7 +48,7 @@ const moviesSlice = createSlice({
    }
 })
 
-export const { setPage } = moviesSlice.actions
+export const { setPage, setDetailId } = moviesSlice.actions
 export const moviesReduser = moviesSlice.reducer
 
 
@@ -53,6 +57,7 @@ export const selectMoviesInfo = (state) => ({
    error: state.movies.error,
    movie_count: state.movies.movie_count,
    page: state.movies.page,
+   detailId: state.movies.detailId
 })
 
 export const selectAllMovies = (state) => state.movies.entities

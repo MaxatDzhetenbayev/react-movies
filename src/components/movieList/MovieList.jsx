@@ -5,16 +5,15 @@ import './MovieList.scss'
 
 
 import MovieCard from '../movieCard/MovieCard'
-import {  selectMoviesInfo, selectVisibleMovies } from '../../features/movies/movies-slice'
+import { selectMoviesInfo, selectAllMovies } from '../../features/movies/movies-slice'
 
 import VisibleContent from '../visibleContent/VisibleContent'
 
 
 const MovieList = () => {
 
-   const search = useSelector(state => state.controls.search)
    const { status, error } = useSelector(selectMoviesInfo)
-   const movies = useSelector((state) => selectVisibleMovies(state, search))
+   const movies = useSelector(selectAllMovies)
 
 
 
