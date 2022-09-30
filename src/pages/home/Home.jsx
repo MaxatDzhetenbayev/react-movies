@@ -15,6 +15,7 @@ const Home = () => {
 
    const dispatch = useDispatch()
 
+
    const limit = 20
    const { page, movie_count } = useSelector(selectMoviesInfo)
 
@@ -42,7 +43,7 @@ const Home = () => {
          <div className='container'>
             <Controls />
             <MovieList />
-            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center'}}>
+            <div style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
                <Pagination total_page={total_page} handleSetPage={handleSetPage} page={page} />
             </div>
 

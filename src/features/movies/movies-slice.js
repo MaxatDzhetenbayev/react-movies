@@ -57,6 +57,6 @@ export const selectMoviesInfo = (state) => ({
 
 export const selectAllMovies = (state) => state.movies.entities
 
-export const selectVisibleMovies = (state, filter) => {
-   return state.movies.entities.filter((movie) => movie.title.toLowerCase().includes(filter.toLowerCase()))
+export const selectVisibleMovies = (state, search) => {
+   return state.movies.entities.filter((movie) => movie.title.toLowerCase().includes(search.toLowerCase()))
 }
